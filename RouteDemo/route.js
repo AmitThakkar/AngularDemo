@@ -5,7 +5,8 @@
 
 var users = [
     {id: 1, name: "Amit", age: 25},
-    {id: 2, name: "Kanika", age: 45}
+    {id: 2, name: "NM", age: 43},
+    {id: 3, name: "Kanika", age: 45}
 ];
 
 function MainController($scope) {
@@ -15,12 +16,12 @@ function MainController($scope) {
 }
 
 function UserListController($scope) {
-    $scope.users = [];
-    angular.extend($scope.users, users);
+    $scope.users = users;
     $scope.remove = function (id) {
         $scope.users = _.filter($scope.users, function (user) {
             return user.id != id;
         });
+        users = $scope.users;
     };
 }
 
@@ -28,10 +29,10 @@ function CreateUserController($scope, $location) {
     $scope.user = {id: users.length + 1};
     $scope.add = function () {
         users.push(angular.copy($scope.user));
-        $location.path("/user/list");
+        $location.path("/user/show/" + $scope.user.id);
     };
     $scope.cancel = function () {
-        $scope.user = {};
+        $scope.user = {id: users.length + 1};
     };
 }
 
@@ -41,12 +42,17 @@ function ShowUserController($scope, $routeParams) {
     });
 }
 
-function EditUserController($scope, $routeParams) {
-    $scope.user = angular.copy(_.find(users, function (user) {
+function EditUserController($scope, $routeParams, $location) {
+    var currentUser = _.find(users, function (user) {
         return user.id == $routeParams.id;
-    }));
+    });
+    $scope.user = angular.copy(currentUser);
     $scope.update = function () {
         users[$scope.user.id - 1] = angular.copy($scope.user);
+        $location.path("/user/list");
+    };
+    $scope.cancel = function () {
+        $scope.user = angular.copy(currentUser);
     };
 }
 
