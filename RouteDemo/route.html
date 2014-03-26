@@ -5,14 +5,15 @@
     <script type="application/javascript" src="../lib/angular.min.js"></script>
     <script type="application/javascript" src="../lib/angular-route.min.js"></script>
     <script type="application/javascript" src="../lib/bindonce.min.js"></script>
+    <script type="application/javascript" src="../lib/underscore.js"></script>
     <script type="application/javascript" src="./route.js"></script>
 </head>
 <body ng-controller="MainController">
 <h2>{{mainPage.title}}</h2>
 <hr/>
 <div>
-    <a href="#/list">List</a> |
-    <a href="#/create">Create</a>
+    <a href="#/user/list">List</a> |
+    <a href="#/user/create">Create</a>
 </div>
 <hr/>
 <ng-view>
