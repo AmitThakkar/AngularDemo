@@ -42,6 +42,9 @@ function ShowUserController($scope, $routeParams) {
     });
 }
 
+/*
+*
+* */
 function EditUserController($scope, $routeParams, $location) {
     var currentUser = _.find(users, function (user) {
         return user.id == $routeParams.id;
@@ -56,7 +59,11 @@ function EditUserController($scope, $routeParams, $location) {
     };
 }
 
-angular.module('route', ['ngRoute', 'pasvaz.bindonce'])
+/*
+* Route Mapping: defining route for routeTest module, and as from angular 1.2 version
+* ngRoute is now different module, which we have include explicitly in depended module.
+* */
+angular.module('routeTest', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/user/list', {templateUrl: 'partials/list.html', controller: UserListController})
