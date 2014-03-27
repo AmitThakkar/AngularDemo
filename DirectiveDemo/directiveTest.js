@@ -4,7 +4,7 @@
 'use strict';
 
 var directiveTestApp = angular.module('directiveTest', []);
-directiveTestApp.directive('myTemplate', function () { // Registering dtTemplate directive to directiveTest module
+directiveTestApp.directive('myTemplate', function () { // Registering myTemplate directive to directiveTest module
     return {
         /*
          * Restrict restricting to directive must be use as:
