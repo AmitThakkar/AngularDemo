@@ -16,6 +16,7 @@ directiveTestApp.directive('myTemplate', function () { // Registering myTemplate
          * 'A' means directive can be use as attribute only.
          * */
         restrict: "ECMA", // directive can be use as attribute, element, class and comment.
-        template: "this is directive template test" // DOM element's inner content should be replace with this.
+        replace:true,
+        template: "<div>this is directive template test</div>" // DOM element's inner content should be replace with this.
     };
 });
