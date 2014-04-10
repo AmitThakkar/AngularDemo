@@ -21,9 +21,9 @@ controller will be child Controller of MainController, so we also call it as Mas
  -->
 <body ng-controller="MainController">
 <!--
-MainController have a scope, which will be accessible to whole body tag, because body tag is
+MainController have a scope, which will be accessible to whole html body, because body tag is
 marked with MainController, MainController have a property into his scope with named mainPage,
-which also have a property named title, which we are accessing with dot(.) operator on mainPage,
+which have a property named title, which we are access with dot(.) operator on mainPage,
 And mainPage property is directly accessing from MainController scope.
 -->
 <h2>{{mainPage.title}}</h2>

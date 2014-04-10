@@ -9,14 +9,20 @@ var users = [
     {id: 3, name: "Kanika", age: 45}
 ];
 
-// Master Controller
+/*
+ * Master Controller, who's scope will be visible to whole body,
+ * because we will mark it on body tag.
+ * */
 function MainController($scope) {
     $scope.mainPage = {
         title: "User Management"
     };
 }
 
-// UserListController, who is responsible for /user/list Url
+/*
+ * UserListController, who is responsible for /user/list Url
+ * and its scope will be visible to list.html only.
+ * */
 function UserListController($scope) {
     $scope.users = users;
     $scope.remove = function (id) {
@@ -27,7 +33,10 @@ function UserListController($scope) {
     };
 }
 
-// CreateUserController, who is responsible for /user/create Url
+/*
+ * CreateUserController, who is responsible for /user/list Url
+ * and its scope will be visible to create.html only.
+ * */
 function CreateUserController($scope, $location) {
     $scope.user = {id: users.length + 1};
     $scope.add = function () {
@@ -39,14 +48,20 @@ function CreateUserController($scope, $location) {
     };
 }
 
-// ShowUserController, who is responsible for /user/show Url
+/*
+ * ShowUserController, who is responsible for /user/list Url
+ * and its scope will be visible to show.html only.
+ * */
 function ShowUserController($scope, $routeParams) {
     $scope.user = _.find(users, function (user) {
         return user.id == $routeParams.id;
     });
 }
 
-// EditUserController, who is responsible for /user/edit Url
+/*
+ * EditUserController, who is responsible for /user/list Url
+ * and its scope will be visible to edit.html only.
+ * */
 function EditUserController($scope, $routeParams, $location) {
     var currentUser = _.find(users, function (user) {
         return user.id == $routeParams.id;
