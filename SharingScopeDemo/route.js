@@ -25,12 +25,6 @@ function MainController($scope) {
  * */
 function UserListController($scope) {
     $scope.users = users;
-    $scope.remove = function (id) {
-        $scope.users = _.filter(users, function (user) {
-            return user.id != id;
-        });
-        users = $scope.users;
-    };
 }
 
 /*
@@ -81,19 +75,31 @@ function EditUserController($scope, $routeParams, $location) {
  * ngRoute is now different module, which we have include explicitly in depended module.
  * */
 // Defining a module with name routeTest and providing ngRoute as dependency.
-angular.module('routeTest', ['ngRoute'])
-    .config(['$routeProvider', function ($routeProvider) {
-        // Defining different pages with different URLs
-        $routeProvider
-            // If Url is /user/list then list.html will render and UserListController will execute.
-            .when('/user/list', {templateUrl: 'partials/list.html', controller: UserListController})
-            // If Url is /user/create then create.html will render and CreateUserController will execute.
-            .when('/user/create', {templateUrl: 'partials/create.html', controller: CreateUserController})
-            // If Url is /user/edit/:id then edit.html will render and EditUserController will execute.
-            .when('/user/edit/:id', {templateUrl: 'partials/edit.html', controller: EditUserController})
-            // If Url is /user/show/:id then show.html will render and ShowUserController will execute.
-            .when('/user/show/:id', {templateUrl: 'partials/show.html', controller: ShowUserController})
-            // TODO Define other URL mapping here.
-            // If no URL match then otherwise will execute and will redirect to /user/list
-            .otherwise({redirectTo: '/user/list'});
-    }]);
+var routeTestModule = angular.module('routeTest', ['ngRoute']);
+routeTestModule.config(['$routeProvider', function ($routeProvider) {
+    // Defining different pages with different URLs
+    $routeProvider
+        // If Url is /user/list then list.html will render and UserListController will execute.
+        .when('/user/list', {templateUrl: 'partials/list.html', controller: UserListController})
+        // If Url is /user/create then create.html will render and CreateUserController will execute.
+        .when('/user/create', {templateUrl: 'partials/create.html', controller: CreateUserController})
+        // If Url is /user/edit/:id then edit.html will render and EditUserController will execute.
+        .when('/user/edit/:id', {templateUrl: 'partials/edit.html', controller: EditUserController})
+        // If Url is /user/show/:id then show.html will render and ShowUserController will execute.
+        .when('/user/show/:id', {templateUrl: 'partials/show.html', controller: ShowUserController})
+        // TODO Define other URL mapping here.
+        // If no URL match then otherwise will execute and will redirect to /user/list
+        .otherwise({redirectTo: '/user/list'});
+}]);
+
+routeTestModule.directive('removeUserFunctionality', ['$location', function ($location) {
+    return function ($scope) {
+        $scope.remove = function (id) {
+            $scope.users = _.filter(users, function (user) {
+                return user.id != id;
+            });
+            users = $scope.users;
+            $location.path("/user/list");
+        };
+    }
+}]);
