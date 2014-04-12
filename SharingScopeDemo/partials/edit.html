@@ -1,3 +1,4 @@
+<!-- We are using remove-user-functionality directive to inject remove function into scope -->
 <table remove-user-functionality>
     <tr>
         <td>Name</td>
@@ -11,5 +12,9 @@
         <td><input type="button" value="Cancel" ng-click="cancel()"/></td>
         <td><input type="button" value="Update" ng-click="update()"/></td>
         <td><input type="button" value="Remove" ng-click="remove(user.id)" /></td>
+        <!--
+        Here remove function is not define into EditUserController, its injected by
+        remove-user-functionality directive.
+        -->
     </tr>
 </table>

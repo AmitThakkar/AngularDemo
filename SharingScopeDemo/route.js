@@ -92,6 +92,11 @@ routeTestModule.config(['$routeProvider', function ($routeProvider) {
         .otherwise({redirectTo: '/user/list'});
 }]);
 
+/*
+ * Defining RemoveUserFunctionality Directive, to share this functionality among
+ * multiple controllers. In this directive, we are injecting remove user function
+ * into scope,
+ * */
 routeTestModule.directive('removeUserFunctionality', ['$location', function ($location) {
     return function ($scope) {
         $scope.remove = function (id) {
@@ -103,3 +108,6 @@ routeTestModule.directive('removeUserFunctionality', ['$location', function ($lo
         };
     }
 }]);
+
+// We are providing restrict value, so default value is
+// 'A' means directive can be used as attribute only, so we
