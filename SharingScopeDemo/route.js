@@ -99,6 +99,10 @@ routeTestModule.config(['$routeProvider', function ($routeProvider) {
  * */
 routeTestModule.directive('removeUserFunctionality', ['$location', function ($location) {
     return function ($scope) {
+        /*
+         * We placed remove function from ListUserController to here(in directive),
+         * And injecting remove function everywhere with the help of this directive.
+         * */
         $scope.remove = function (id) {
             $scope.users = _.filter(users, function (user) {
                 return user.id != id;
@@ -108,6 +112,3 @@ routeTestModule.directive('removeUserFunctionality', ['$location', function ($lo
         };
     }
 }]);
-
-// We are providing restrict value, so default value is
-// 'A' means directive can be used as attribute only, so we
