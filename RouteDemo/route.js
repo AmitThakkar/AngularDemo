@@ -10,7 +10,7 @@ var users = [
 ];
 
 /*
- * Master Controller, who's scope will be visible to whole body,
+ * Master Controller, whose scope will be visible to whole body,
  * because we will mark it on body tag.
  * */
 function MainController($scope) {
@@ -78,7 +78,7 @@ function EditUserController($scope, $routeParams, $location) {
 
 /*
  * Route Mapping: defining route for routeTest module, and as from angular 1.2 version
- * ngRoute is now different module, which we have include explicitly in depended module.
+ * ngRoute is now different module, which we have to include explicitly in depended module.
  * */
 // Defining a module with name routeTest and providing ngRoute as dependency.
 angular.module('routeTest', ['ngRoute'])
@@ -94,6 +94,6 @@ angular.module('routeTest', ['ngRoute'])
             // If Url is /user/show/:id then show.html will render and ShowUserController will execute.
             .when('/user/show/:id', {templateUrl: 'partials/show.html', controller: ShowUserController})
             // TODO Define other URL mapping here.
-            // If no URL match then otherwise will execute and will redirect to /user/list
+            // If no URL matches then otherwise will execute and will redirect to /user/list
             .otherwise({redirectTo: '/user/list'});
     }]);

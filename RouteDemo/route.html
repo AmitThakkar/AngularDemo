@@ -21,10 +21,10 @@ controller will be child Controller of MainController, so we also call it as Mas
  -->
 <body ng-controller="MainController">
 <!--
-MainController have a scope, which will be accessible to whole html body, because body tag is
-marked with MainController, MainController have a property into his scope with named mainPage,
-which have a property named title, which we are access with dot(.) operator on mainPage,
-And mainPage property is directly accessing from MainController scope.
+MainController has a scope, which will be accessible to whole html body, because body tag is
+marked with MainController, MainController have a property into its scope with  mainPage,
+which has a property named as “title”, which we are accessing with dot(.) operator on mainPage,
+And mainPage property is being directly accessed from MainController scope.
 -->
 <h2>{{mainPage.title}}</h2>
 <hr/>
@@ -35,7 +35,7 @@ And mainPage property is directly accessing from MainController scope.
 <hr/>
 <!--
 Defining ng-view Directive, where all partial html will load based on Route/URL Mapping. And
-Controller will execute before partial HTML render. That partial HTML will replace its self
+Controller will execute before partial HTML render. That partial HTML will replace itself
 with inner-HTML of ng-view Directive.
 -->
 <ng-view>
