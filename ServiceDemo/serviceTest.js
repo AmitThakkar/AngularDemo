@@ -5,8 +5,15 @@
 
 var serviceTestApp = angular.module('serviceTest', []);
 
+/*
+ * Defining TestService, Which will load User list Asynchronously(From Web-Server).
+ * for demo purpose we are using setTimeout().
+ *
+ * $q is build-in Angular Service which helps us to implement Promise-Defer Design Pattern and
+ * will be injected to TestService by AngularJS via DI(Dependency Injection) Design Pattern.
+ * */
 serviceTestApp.service('TestService', function ($q) {
-    // service is just a constructor function that will be called with 'new', singleton calls only once
+    // Defining Service function: getUsers which will load user list
     this.getUsers = function () {
         var deferred = $q.defer();
         setTimeout(function () {
@@ -21,7 +28,11 @@ serviceTestApp.service('TestService', function ($q) {
     };
 });
 
+/*
+ * Defining TestController, who will use TestService to get User List.
+ * */
 function TestController($scope, TestService) {
+    // Calling getUsers function on TestService.
     TestService.getUsers().
         then(function (users) {
             $scope.users = users;
