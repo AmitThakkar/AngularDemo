@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="scopeTest">
+<head>
+    <title>Scope Demo</title>
+    <!-- Require AngularJS -->
+    <script type="application/javascript" src="../lib/angular.min.js"></script>
+    <!-- Require our custom scopeTestJS -->
+    <script type="application/javascript" src="./scopeTest.js"></script>
+</head>
+<body ng-controller="ScopeTestController">
+<div>
+    ScopeTestController: {{scopeName}}
+</div>
+<hr/>
+
+<div isolated-scope-test-without-template>
+    isolatedScopeTestWithoutTemplate: {{scopeName}}
+</div>
+<hr/>
+
+<div isolated-scope-test-with-template>
+    isolatedScopeTestWithTemplate: {{scopeName}}
+</div>
+<hr/>
+
+<div inherited-scope-test-without-template>
+    inheritedScopeTestWithoutTemplate: {{scopeName}}
+</div>
+<hr/>
+
+<div inherited-scope-test-with-template>
+    inheritedScopeTestWithTemplate: {{scopeName}}
+</div>
+<hr/>
+
+<div same-scope-test-without-template>
+    sameScopeTestWithoutTemplate: {{scopeName}}
+</div>
+<hr/>
+
+<div same-scope-test-with-template>
+    sameScopeTestWithTemplate: {{scopeName}}
+</div>
+<hr/>
+
+</body>
+</html>
