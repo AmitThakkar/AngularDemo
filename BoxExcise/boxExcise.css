@@ -1,3 +1,4 @@
-#exciseBox ul {background: #eee; list-style-type: none; width: 200px; height: 200px;}
-#exciseBox ul li {background: #ccc; text-align: center; margin: 5px;}
-#exciseBox ul li:hover {border: 1px solid brown;}
+#exciseBox ul {background: #eee; list-style-type: none; width: 210px; height: 210px;  padding: 0px;}
+#exciseBox ul li {background: #ccc; text-align: center; margin: 5px; width: 60px; height: 60px; float: left; display: table; box-sizing: border-box;}
+#exciseBox ul li p {display: table-cell; vertical-align: middle;}
+#exciseBox ul li:hover {border: 1px dotted brown;}

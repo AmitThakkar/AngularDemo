@@ -17,7 +17,7 @@
         <li ng-repeat="(number, numberObject) in boxObject.numbers"
             ng-click="applyColor(number)"
             ng-style="numberObject.style">
-            {{number}}
+            <p>{{number}}</p>
         </li>
     </ul>
     <input type="button" value="Reset" ng-click="reset()">
