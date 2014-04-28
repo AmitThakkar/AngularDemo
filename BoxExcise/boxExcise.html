@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="boxExcise">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="boxExcise.css">
+    <!-- Require AngularJS -->
+    <script type="application/javascript" src="../lib/angular.min.js"></script>
+    <!-- Require custom boxExciseJS -->
+    <script type="application/javascript" src="./boxExcise.js"></script>
+</head>
+<body>
+<div id="exciseBox" ng-controller="BoxExcise">
+    <input type="radio" ng-model="boxObject.selectedColor" name="color" value='red'> Red
+    <input type="radio" ng-model="boxObject.selectedColor" name="color"  value="blue"> Blue
+    <input type="radio" ng-model="boxObject.selectedColor" name="color" value="green"> Green
+    <ul>
+        <li ng-repeat="(number, numberObject) in boxObject.numbers"
+            ng-click="applyColor(number)"
+            ng-style="numberObject.style"
+            ng-class="{ mouse_over:  boxObject.mouseOverNumber == number}"
+            ng-mouseover="boxObject.mouseOverNumber = number">
+            {{number}}
+        </li>
+    </ul>
+    <input type="button" value="Reset" ng-click="reset()">
+</div>
+</body>
+</html>
