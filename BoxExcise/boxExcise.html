@@ -16,9 +16,7 @@
     <ul>
         <li ng-repeat="(number, numberObject) in boxObject.numbers"
             ng-click="applyColor(number)"
-            ng-style="numberObject.style"
-            ng-class="{ mouse_over:  boxObject.mouseOverNumber == number}"
-            ng-mouseover="boxObject.mouseOverNumber = number">
+            ng-style="numberObject.style">
             {{number}}
         </li>
     </ul>

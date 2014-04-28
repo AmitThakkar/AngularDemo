@@ -1,3 +1,3 @@
 #exciseBox ul {background: #eee; list-style-type: none; width: 200px; height: 200px;}
 #exciseBox ul li {background: #ccc; text-align: center; margin: 5px;}
-#exciseBox ul li.mouse_over {border: 1px solid brown;}
+#exciseBox ul li:hover {border: 1px solid brown;}
