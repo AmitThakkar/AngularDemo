@@ -93,21 +93,24 @@ routeTestModule.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 /*
- * Defining RemoveUserFunctionality Directive, to share it  among
+ * Defining RemoveUserFunctionality Directive, to share it among
  * multiple controllers. This directive injects remove function to scope where it is marked.
  * */
 routeTestModule.directive('removeUserFunctionality', ['$location', function ($location) {
-    return function ($scope) {
-        /*
-         * We remove function from ListUserController and place it here (in directive),
-         * And inject remove function everywhere with the help of this directive.
-         * */
-        $scope.remove = function (id) {
-            $scope.users = _.filter(users, function (user) {
-                return user.id != id;
-            });
-            users = $scope.users;
-            $location.path("/user/list");
-        };
+    return {
+        scope: true,
+        link: function ($scope) {
+            /*
+             * We remove function from ListUserController and place it here (in directive),
+             * And inject remove function everywhere with the help of this directive.
+             * */
+            $scope.remove = function (id) {
+                $scope.users = _.filter(users, function (user) {
+                    return user.id != id;
+                });
+                users = $scope.users;
+                $location.path("/user/list");
+            };
+        }
     }
 }]);
