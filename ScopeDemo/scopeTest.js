@@ -75,20 +75,20 @@ scopeTestApp.directive('inheritedScopeTest2WithTemplate', function () {
 
 scopeTestApp.directive('parentScopeTestWithoutTemplate', function () {
     return {
-        // Default value of scope is false. 'scope false' use same scope in which it will define.
+        // Default value of scope is false. 'scope false' use same scope in which it will define means Parent Scope.
         scope: false,
         link: function (scope) {
-            scope.scopeName = "sameScopeTestWithoutTemplate";
+            scope.scopeName = "parentScopeTestWithoutTemplate";
         }
     };
 });
 
 scopeTestApp.directive('parentScopeTestWithTemplate', function () {
     return {
-        // Default value of scope is false. 'scope false' use same scope in which it will define.
+        // Default value of scope is false. 'scope false' use same scope in which it will define means Parent Scope.
         link: function (scope) {
-            scope.scopeName = "sameScopeTestWithTemplate";
+            scope.scopeName = "parentScopeTestWithoutTemplate";
         },
-        template: 'sameScopeTestWithTemplate: {{scopeName}} {{controllerField}}'
+        template: 'parentScopeTestWithTemplate: {{scopeName}} {{controllerField}}'
     };
 });
