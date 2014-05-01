@@ -9,7 +9,8 @@
 </head>
 <body ng-controller="ScopeTestController">
 <div>
-    ScopeTestController: {{scopeName}} {{controllerField}} <!-- ScopeTestController: ScopeTestController controllerField -->
+    ScopeTestController: {{scopeName}} {{controllerField}}
+    <!-- ScopeTestController: ScopeTestController controllerField -->
 </div>
 <hr/>
 
@@ -33,7 +34,8 @@
 
 <!-- This uses Parent Scope, that is default one. So same scope will be on directive, template/templateUrl and on HTML. -->
 <div parent-scope-test-without-template>
-    parentScopeTestWithoutTemplate: {{scopeName}} {{controllerField}}  <!-- ScopeTestController: parentScopeTestWithoutTemplate controllerField -->
+    parentScopeTestWithoutTemplate: {{scopeName}} {{controllerField}}
+    <!-- ScopeTestController: parentScopeTestWithoutTemplate controllerField -->
 </div>
 <hr/>
 <div parent-scope-test-with-template>
@@ -49,11 +51,11 @@
 <!--
 If 2 directive have marked to same node, then template will get scope of
 its own directive only. And any on directive have inherited scope then that scope will
-apply on that inner HTML(becuause after AngularJS 1.2 isolates scope will visible in
+apply on that inner HTML(because after AngularJS 1.2 isolates scope will visible in
 directive and its own template if have). And if 2 inherited scope directive have marked on
 same node then both will use same inherited scope.
 -->
-<!--<div isolated-scope-test-with-template inherited-scope-test-without-template>
+<div isolated-scope-test-with-template inherited-scope-test-without-template>
 </div>
 <hr/>
 <div isolated-scope-test-without-template inherited-scope-test-with-template>
@@ -66,7 +68,7 @@ same node then both will use same inherited scope.
 <div inherited-scope-test-without-template inherited-scope-test2-without-template>
     ScopeTestController: {{scopeName}} {{controllerField}}
 </div>
-<hr/>-->
+<hr/>
 
 </body>
 </html>

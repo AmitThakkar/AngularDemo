@@ -23,6 +23,9 @@ scopeTestApp.directive('isolatedScopeTestWithoutTemplate', function () {
     };
 });
 
+/*
+ * Defining directive with Isolated Scope.
+ * */
 scopeTestApp.directive('isolatedScopeTestWithTemplate', function () {
     return {
         // 'scope object hash' created a new isolated Scope.
