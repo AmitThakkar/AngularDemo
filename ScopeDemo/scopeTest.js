@@ -3,12 +3,15 @@
  */
 'use strict';
 
+/*
+ * Defining ScopeTestController with two scope fields
+ * */
+var scopeTestApp = angular.module('scopeTest', []);
+
 function ScopeTestController($scope) {
     $scope.scopeName = "ScopeTestController";
     $scope.controllerField = "controllerField";
 }
-
-var scopeTestApp = angular.module('scopeTest', []);
 
 scopeTestApp.directive('isolatedScopeTestWithoutTemplate', function () {
     return {
@@ -41,6 +44,9 @@ scopeTestApp.directive('inheritedScopeTestWithoutTemplate', function () {
     };
 });
 
+/*
+ * Defining directive with Inherited Scope.
+ * */
 scopeTestApp.directive('inheritedScopeTestWithTemplate', function () {
     return {
         // 'scope true' created a new inherited Scope.
@@ -83,6 +89,9 @@ scopeTestApp.directive('parentScopeTestWithoutTemplate', function () {
     };
 });
 
+/*
+ * Defining directive with Parent Scope.
+ * */
 scopeTestApp.directive('parentScopeTestWithTemplate', function () {
     return {
         // Default value of scope is false. 'scope false' use same scope in which it will define means Parent Scope.

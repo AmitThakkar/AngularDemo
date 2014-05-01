@@ -9,36 +9,36 @@
 </head>
 <body ng-controller="ScopeTestController">
 <div>
-    ScopeTestController: {{scopeName}} {{controllerField}}
+    ScopeTestController: {{scopeName}} {{controllerField}} <!-- ScopeTestController: ScopeTestController controllerField -->
 </div>
 <hr/>
 
 <!-- Isolated Scope get only visible in template/templateUrl and directive only and but does not get visible in inner HTML -->
-<!--<div isolated-scope-test-without-template>
+<div isolated-scope-test-without-template>
     isolatedScopeTestWithoutTemplate: {{scopeName}} {{controllerField}}
 </div>
 <hr/>
 <div isolated-scope-test-with-template>
 </div>
-<hr/>-->
+<hr/>
 
 <!-- inherited Scope get visible in template/templateUrl, directive and inner HTML -->
-<!--<div inherited-scope-test-without-template>
+<div inherited-scope-test-without-template>
     inheritedScopeTestWithoutTemplate: {{scopeName}} {{controllerField}}
 </div>
 <hr/>
 <div inherited-scope-test-with-template>
 </div>
-<hr/>-->
+<hr/>
 
-<!-- This uses Parent Scope, that is default one. So same scope will be on directive, template/templateUrl and inner HTML. -->
-<!--<div parent-scope-test-without-template>
-    sameScopeTestWithoutTemplate: {{scopeName}} {{controllerField}}
+<!-- This uses Parent Scope, that is default one. So same scope will be on directive, template/templateUrl and on HTML. -->
+<div parent-scope-test-without-template>
+    parentScopeTestWithoutTemplate: {{scopeName}} {{controllerField}}  <!-- ScopeTestController: parentScopeTestWithoutTemplate controllerField -->
 </div>
 <hr/>
 <div parent-scope-test-with-template>
 </div>
-<hr/>-->
+<hr/>
 
 <!-- 2 directive with template/templateUrl on same node gives error -->
 <!--<div isolated-scope-test-with-template inherited-scope-test-with-template>
