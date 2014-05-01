@@ -1,0 +1,39 @@
+#table ul {
+    background: #ccc;
+    list-style: none;
+    padding: 0px;
+    width: 186px;
+    height: 186px;
+}
+
+#table ul li {
+    background: #eee;
+    padding: 1px;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+    line-height: 3em;
+}
+
+#tableRelative ul {
+    background: #ccc;
+    list-style: none;
+    padding: 0px;
+    overflow: auto; /* Containing the child element */
+    width: 100%;
+    min-width: 250px;
+    max-width: 350px;
+    height: 100%;
+}
+
+#tableRelative ul li {
+    background: #eee;
+    float: left;
+    width: 31%;
+    height: 31%;
+    margin: 1%;
+    text-align: center;
+    line-height: 3em;
+}
