@@ -10,6 +10,7 @@ ul {
     padding: 0;
     margin: 15px 0;
     display: inline-block;
+    height: 192px;
 }
 
 li {
@@ -31,6 +32,29 @@ ul:hover li {
 
 ul li:hover {
     opacity: 1;
+}
+
+body div.suspectList {
+    text-align: center;
+}
+
+body div.buttons {
+    float: right;
+}
+
+body div.buttons input#reset {
+    background: #ccc;
+    height: 30px;
+    width: 70px;
+    border: 0;
+    margin-right: 5px;
+}
+
+body div.buttons input.saveButton {
+    height: 30px;
+    width: 70px;
+    border: 0;
+    background: cornflowerblue
 }
 
 hr {

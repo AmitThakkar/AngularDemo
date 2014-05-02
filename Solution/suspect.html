@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Who Killed Kenny</title>
+    <link rel="stylesheet" type="text/css" href="css/suspect.css">
+    <!-- Require jQueryJS -->
+    <script type="application/javascript" src="js/jQuery.min.js"></script>
+    <!-- Require custom solution -->
+    <script type="application/javascript" src="js/suspect.js"></script>
+</head>
+<body>
+<h1>Who Killed Kenny ?</h1>
+<h4>Here are the suspects. Your job is to sort them from who you think is the most likely to the least likely, by
+    clicking on the suspect.</h4>
+
+<div class="suspectList">
+    <ul id="beforeClicked">
+        <li><img src="i/stan.png"/><span>stan</span></li>
+        <li><img src="i/kyle.png"/><span>kyle</span></li>
+        <li><img src="i/kenny.png"/><span>kenny</span></li>
+        <li><img src="i/cartman.png"/><span>Cartman</span></li>
+        <li><img src="i/wendy.png"/><span>wendy</span></li>
+        <li><img src="i/ike.png"/><span>ike</span></li>
+        <li><img src="i/tweak.png"/><span>tweak</span></li>
+    </ul>
+    <hr/>
+    <ul id="afterClicked">
+    </ul>
+</div>
+<div class="buttons">
+    <input id="reset" type="button" value="Reset"/>
+    <input type="button" class="saveButton" value="Save"/>
+</div>
+</body>
+</html>

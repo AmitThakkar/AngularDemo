@@ -4,23 +4,23 @@
 
 (function () {
     var selectors = {
-            beforeClicked: "#beforeClicked li",
-            afterClicked: "#afterClicked",
-            resetButton:"#reset"
+            beforeClickedSelector: "#beforeClicked li",
+            afterClickedSelector: "#afterClicked",
+            resetButtonSelector: "#reset"
         },
         eventHandlers = {
             identifyCriminal: function () {
                 var identifiedSuspect = jQuery(this);
-                $(selectors.afterClicked).append(identifiedSuspect.clone())
+                jQuery(selectors.afterClickedSelector).append(identifiedSuspect.clone());
                 identifiedSuspect.hide();
             },
-            resetCriminalList: function(){
-                $(selectors.beforeClicked).show();
-                $(selectors.afterClicked).empty();
+            resetCriminalList: function () {
+                jQuery(selectors.beforeClickedSelector).show();
+                jQuery(selectors.afterClickedSelector).empty();
             },
             bind: function () {
-                jQuery(selectors.beforeClicked).click(eventHandlers.identifyCriminal);
-                jQuery(selectors.resetButton).click(eventHandlers.resetCriminalList);
+                jQuery(selectors.beforeClickedSelector).click(eventHandlers.identifyCriminal);
+                jQuery(selectors.resetButtonSelector).click(eventHandlers.resetCriminalList);
             },
             init: new function () {
                 jQuery(document).ready(function () {
