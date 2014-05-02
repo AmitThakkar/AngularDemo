@@ -58,7 +58,7 @@ body div.buttons input.saveButton {
     background: cornflowerblue
 }
 
-hr {
+body div.suspectList hr {
     height: 2px;
     background: #ffffff;
 }

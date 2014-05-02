@@ -11,8 +11,10 @@
         eventHandlers = {
             identifyCriminal: function (event) {
                 var identifiedSuspect = jQuery(event.target).parent('li');
-                jQuery(selectors.afterClickedSelector).append(identifiedSuspect.clone());
-                identifiedSuspect.hide();
+                if (identifiedSuspect.length) {
+                    jQuery(selectors.afterClickedSelector).append(identifiedSuspect.clone());
+                    identifiedSuspect.hide();
+                }
             },
             resetCriminalList: function () {
                 jQuery(selectors.beforeClickedSelector + " li").show();
