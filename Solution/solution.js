@@ -4,14 +4,23 @@
 
 (function () {
     var selectors = {
-            dummySelector: "div#solution dummy"
+            beforeClicked: "#beforeClicked li",
+            afterClicked: "#afterClicked",
+            resetButton:"#reset"
         },
         eventHandlers = {
-            dummyAction: function () {
-
+            identifyCriminal: function () {
+                var identifiedSuspect = jQuery(this);
+                $(selectors.afterClicked).append(identifiedSuspect.clone())
+                identifiedSuspect.hide();
+            },
+            resetCriminalList: function(){
+                $(selectors.beforeClicked).show();
+                $(selectors.afterClicked).empty();
             },
             bind: function () {
-                jQuery(selectors.dummySelector).click(eventHandlers.dummyAction);
+                jQuery(selectors.beforeClicked).click(eventHandlers.identifyCriminal);
+                jQuery(selectors.resetButton).click(eventHandlers.resetCriminalList);
             },
             init: new function () {
                 jQuery(document).ready(function () {

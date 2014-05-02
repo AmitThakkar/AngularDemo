@@ -2,13 +2,13 @@ body {
     background-color: #000;
     color: #fff;
     font-family: arial;
-    text-align: center;
+    padding: 0 35px 0 35px;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
-    margin: auto 0;
+    margin: 15px 0;
     display: inline-block;
 }
 
@@ -19,10 +19,21 @@ li {
     border-radius: 4px;
     padding: 5px;
 }
-li span{display: block; color: #000000}
-ul:hover li{
+
+li span {
+    display: block;
+    color: #000000
+}
+
+ul:hover li {
     opacity: 0.5;
 }
+
 ul li:hover {
     opacity: 1;
+}
+
+hr {
+    height: 2px;
+    background: #ffffff;
 }
