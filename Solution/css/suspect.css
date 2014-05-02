@@ -42,7 +42,7 @@ body div.buttons {
     float: right;
 }
 
-body div.buttons input#reset {
+body div.buttons input.reset {
     background: #ccc;
     height: 30px;
     width: 70px;

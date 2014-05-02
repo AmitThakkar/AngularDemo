@@ -6,7 +6,7 @@
     var selectors = {
             beforeClickedSelector: "#beforeClicked li",
             afterClickedSelector: "#afterClicked",
-            resetButtonSelector: "#reset"
+            resetButtonSelector: ".reset"
         },
         eventHandlers = {
             identifyCriminal: function () {
