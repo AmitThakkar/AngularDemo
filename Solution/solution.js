@@ -2,7 +2,7 @@
  * Created by Amit Thakkar on 2/5/14.
  */
 
-(function Solution() {
+(function () {
     var selectors = {
             dummySelector: "div#solution dummy"
         },
