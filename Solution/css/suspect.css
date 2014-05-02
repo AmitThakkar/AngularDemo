@@ -13,25 +13,25 @@ body div.suspectList ul {
     height: 192px;
 }
 
-li {
+body div.suspectList ul li {
     display: inline-block;
-    margin: 5px;
+    margin: 5px 10px;
     background: white;
     border-radius: 4px;
     padding: 5px;
     cursor: pointer;
 }
 
-li span {
+body div.suspectList ul li span {
     display: block;
     color: #000000;
 }
 
-ul:hover li {
+body div.suspectList ul:hover li {
     opacity: 0.5;
 }
 
-ul li:hover {
+body div.suspectList ul li:hover {
     opacity: 1;
 }
 
