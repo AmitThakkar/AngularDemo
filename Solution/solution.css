@@ -2,21 +2,27 @@ body {
     background-color: #000;
     color: #fff;
     font-family: arial;
-    max-width: 990px;
+    text-align: center;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
     margin: auto 0;
+    display: inline-block;
 }
 
 li {
     display: inline-block;
-    float: left;
     margin: 5px;
     background: white;
     border-radius: 4px;
     padding: 5px;
 }
-li span{display: block;}
+li span{display: block; color: #000000}
+ul:hover li{
+    opacity: 0.5;
+}
+ul li:hover {
+    opacity: 1;
+}
