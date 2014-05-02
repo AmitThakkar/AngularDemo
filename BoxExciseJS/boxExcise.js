@@ -2,51 +2,51 @@
  * Created by Amit Thakkar on 2/5/14.
  */
 
-var box = {
-    selectedColor: "",
-    numbers: {},
-    selectors: {
-        colorSelector: "div#exciseBox input:radio",
-        resetSelector: "div#exciseBox input#reset",
-        numberSelector: "div#exciseBox ul li.number"
-    },
-    eventHandlers: {
-        selectColor: function () {
-            box.selectedColor = this.value;
+(function Box() {
+    var selectedColor = "",
+        numbers = {},
+        selectors = {
+            colorSelector: "div#exciseBox input:radio",
+            resetSelector: "div#exciseBox input#reset",
+            numberSelector: "div#exciseBox ul li.number"
         },
-        resetBox: function () {
-            box.numbers = {};
-            jQuery(box.selectors.numberSelector).css({background: '#ccc'});
-            jQuery(box.selectors.colorSelector + ":checked").prop('checked', false);
-        },
-        colorNumber: function () {
-            var number = this.innerHTML;
-            if (!box.selectedColor) {
-                alert("Please select a color before clicking on boxes.");
-                return;
+        eventHandlers = {
+            selectColor: function () {
+                selectedColor = this.value;
+            },
+            resetBox: function () {
+                numbers = {};
+                jQuery(selectors.numberSelector).removeClass("color");
+                jQuery(selectors.colorSelector + ":checked").prop('checked', false);
+            },
+            colorNumber: function () {
+                var number = this.innerHTML;
+                if (!selectedColor) {
+                    alert("Please select a color before clicking on boxes.");
+                    return;
+                }
+                if (!numbers[number]) {
+                    numbers[number] = {};
+                }
+                if (numbers[number].style) {
+                    alert("Already applied " + numbers[number].style.background + " color.");
+                    return;
+                }
+                numbers[number].style = {background: selectedColor};
+                jQuery(this).css(numbers[number].style);
+            },
+            bind: function () {
+                jQuery(selectors.colorSelector).click(eventHandlers.selectColor);
+                jQuery(selectors.numberSelector).click(eventHandlers.colorNumber);
+                jQuery(selectors.resetSelector).click(eventHandlers.resetBox);
+            },
+            init: new function () {
+                jQuery(document).ready(function () {
+                    eventHandlers.constructor();
+                });
+            },
+            constructor: function () {
+                eventHandlers.bind();
             }
-            if (!box.numbers[number]) {
-                box.numbers[number] = {};
-            }
-            if (box.numbers[number].style) {
-                alert("Already applied " + box.numbers[number].style.background + " color.");
-                return;
-            }
-            box.numbers[number].style = {background: box.selectedColor};
-            jQuery(this).css(box.numbers[number].style);
-        },
-        bind: function () {
-            jQuery(box.selectors.colorSelector).click(box.eventHandlers.selectColor);
-            jQuery(box.selectors.numberSelector).click(box.eventHandlers.colorNumber);
-            jQuery(box.selectors.resetSelector).click(box.eventHandlers.resetBox);
-        },
-        init: new function () {
-            jQuery(document).ready(function () {
-                box.eventHandlers.constructor();
-            });
-        },
-        constructor: function () {
-            box.eventHandlers.bind();
-        }
-    }
-};
+        };
+})();
