@@ -4,18 +4,18 @@
 
 (function () {
     var selectors = {
-            beforeClickedSelector: "#beforeClicked li",
+            beforeClickedSelector: "#beforeClicked",
             afterClickedSelector: "#afterClicked",
             resetButtonSelector: ".reset"
         },
         eventHandlers = {
-            identifyCriminal: function () {
-                var identifiedSuspect = jQuery(this);
+            identifyCriminal: function (event) {
+                var identifiedSuspect = jQuery(event.target).parent('li');
                 jQuery(selectors.afterClickedSelector).append(identifiedSuspect.clone());
                 identifiedSuspect.hide();
             },
             resetCriminalList: function () {
-                jQuery(selectors.beforeClickedSelector).show();
+                jQuery(selectors.beforeClickedSelector + " li").show();
                 jQuery(selectors.afterClickedSelector).empty();
             },
             bind: function () {

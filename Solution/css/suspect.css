@@ -5,7 +5,7 @@ body {
     padding: 0 35px 0 35px;
 }
 
-ul {
+body div.suspectList ul {
     list-style-type: none;
     padding: 0;
     margin: 15px 0;
@@ -19,11 +19,12 @@ li {
     background: white;
     border-radius: 4px;
     padding: 5px;
+    cursor: pointer;
 }
 
 li span {
     display: block;
-    color: #000000
+    color: #000000;
 }
 
 ul:hover li {
