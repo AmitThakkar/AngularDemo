@@ -34,7 +34,7 @@ function UserListController($scope) {
 }
 
 /*
- * CreateUserController, who is responsible for /user/list Url
+ * CreateUserController, who is responsible for /user/create Url
  * and its scope will be visible to create.html only.
  * */
 function CreateUserController($scope, $location) {
@@ -49,7 +49,7 @@ function CreateUserController($scope, $location) {
 }
 
 /*
- * ShowUserController, who is responsible for /user/list Url
+ * ShowUserController, who is responsible for /user/show Url
  * and its scope will be visible to show.html only.
  * */
 function ShowUserController($scope, $routeParams) {
@@ -59,7 +59,7 @@ function ShowUserController($scope, $routeParams) {
 }
 
 /*
- * EditUserController, who is responsible for /user/list Url
+ * EditUserController, who is responsible for /user/edit Url
  * and its scope will be visible to edit.html only.
  * */
 function EditUserController($scope, $routeParams, $location) {
