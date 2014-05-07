@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="notationsSymbolsTest">
+<head>
+    <title>Notation Symbols Demo</title>
+    <!-- Require AngularJS -->
+    <script type="application/javascript" src="../lib/angular.min.js"></script>
+    <!-- Require our custom notationSymbolsTestJS -->
+    <script type="application/javascript" src="./notationsSymbolsTest.js"></script>
+</head>
+<body ng-controller="NotationSymbolsController">
+<div>Name {{name}}</div>
+<input type='button' value="Update Name" ng-click='updateName()'>
+<hr/>
+<div read-only-notation-symbol user-name="{{name}}">
+</div>
+</body>
+</html>
