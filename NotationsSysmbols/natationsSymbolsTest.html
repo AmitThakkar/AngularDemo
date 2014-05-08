@@ -8,10 +8,18 @@
     <script type="application/javascript" src="./notationsSymbolsTest.js"></script>
 </head>
 <body ng-controller="NotationSymbolsController">
-<div>Name {{name}}</div>
-<input type='button' value="Update Name" ng-click='updateName()'>
+<h2>Notation Controller Notation</h2>
+<div>Age {{age}}</div>
+<input type='button' value="Increase Age" ng-click='increaseAge()'>
 <hr/>
-<div read-only-notation-symbol user-name="{{name}}">
-</div>
+<h3>Read=Only(1-Way-Binding) Notation</h3>
+<div read-only-notation-symbol user-age="{{age}}"></div>
+<hr/>
+<h3>2-Way-Binding Notation</h3>
+<div two-way-binding-notation-symbol user-age="age"></div>
+<hr/>
+<h3>Expression/Function Binding Notation</h3>
+<div expression-function-binding-notation-symbol increase-age="increaseAge()"></div>
+<hr/>
 </body>
 </html>
