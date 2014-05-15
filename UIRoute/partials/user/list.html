@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="user in users">
+        <td><a ng-href="#/user/show/{{user.id}}">{{user.id}}</a></td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td><a ng-href="#/user/edit/{{user.id}}">Edit</a></td>
+        <td><input type="button" value="Remove" ng-click="remove(user.id)" /></td>
+    </tr>
+</table>

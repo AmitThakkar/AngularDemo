@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+marking ng-app directive to html tag with routeTest value, Which says that we are
+going to use AngularJS on whole html and routeTest module will be apply to HTML.
+-->
+<html ng-app="uiRouteTest">
+<head>
+    <title>UI-Route Demo</title>
+    <!-- Require AngularJS -->
+    <script type="application/javascript" src="../lib/angular.min.js"></script>
+    <!-- Require Angular-UI-Route-JS -->
+    <script type="application/javascript" src="../lib/angular-ui-router.js"></script>
+    <!-- Require custom uiRouteJS -->
+    <script type="application/javascript" src="./uiRoute.js"></script>
+</head>
+<!--
+Marking MainController to body tag, so whole body will get scope of Main Controller, All other
+controller will be child Controller of MainController, so we also call it as Master Controller.
+ -->
+<body ng-controller="MainController">
+<!--
+MainController has a scope, which will be accessible to whole html body, because body tag is
+marked with MainController, MainController have a property into its scope with  mainPage,
+which has a property named as “title”, which we are accessing with dot(.) operator on mainPage,
+And mainPage property is being directly accessed from MainController scope.
+-->
+<h2>{{mainPage.title}}</h2>
+<hr/>
+<div>
+    <a href="#/home">Home</a> |
+    <a href="#/products">Products</a> |
+    <a href="#/user">Users</a>
+</div>
+<hr/>
+<!--
+Defining ng-view Directive, where all partial html will load based on Route/URL Mapping. And
+Controller will execute before partial HTML render. That partial HTML will replace itself
+with inner-HTML of ng-view Directive.
+-->
+<div ui-view>
+    Loading...
+</div>
+<hr/>
+</body>
+</html>
