@@ -14,9 +14,10 @@
     <!-- Here we are iterating numbers named array and printing all the digits/number -->
     <li ng-repeat="number in numbers">{{number}}</li>
     <!-- To remove NgRepeat:dupes error, we ensure that there is no duplicate primitive
-    value or we must use track by $index in ng-repeat as below -->
+    value or we must use track by $index in ng-repeat as below(track by introduce with
+        AngularJS-1.2) -->
     <!--<li ng-repeat="number in numbers track by $index">{{number}}</li>-->
-    <!-- With the help of trace by $index we are saying to AngularJS that associate DOM node
+    <!-- With the help of trace by $index we are saying to AngularJS that track/associate DOM node
     with index of primitive instead of value of primitive. And index will be unique so it will
     not produce an Error-->
 </ul>
