@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>NgRepeat Gotcha</title>
+    <!-- Require AngularJS -->
+    <script type="application/javascript" src="../lib/angular.min.js"></script>
+    <!-- Require JQueryJS -->
+    <script type="application/javascript" src="../lib/jQuery.min.js"></script>
+    <!-- Require NgRepeatGotcha JS -->
+    <script type="application/javascript" src="./ngRepeatGotcha.js"></script>
+</head>
+<body ng-controller="NgRepeatGotchaController">
+<ul>
+    <!-- Here we are iterating numbers named array and printing all the digits/number -->
+    <li ng-repeat="number in numbers">{{number}}</li>
+    <!-- To remove NgRepeat:dupes error, we ensure that there is no duplicate primitive
+    value or we must use track by $index in ng-repeat as below -->
+    <!--<li ng-repeat="number in numbers track by $index">{{number}}</li>-->
+    <!-- With the help of trace by $index we are saying to AngularJS that associate DOM node
+    with index of primitive instead of value of primitive. And index will be unique so it will
+    not produce an Error-->
+</ul>
+</body>
+</html>
