@@ -14,7 +14,7 @@ function NgRepeatGotchaController($scope) {
      * AngularJS having collection/list of primitives(Numbers/String etc.) then AngularJS
      * associate DOM node with value of primitive, So duplicate primitive is not allowed.
      * So if we change numbers array as below then above code will produce an
-     * Error: ngRepeat:dupes because numbers array containing 2 twice(on index 1 and 3).
+     * Error: ngRepeat:dupes because numbers array containing 1 twice(on index 0 and 3).
      * */
-//    $scope.numbers = [1, 2, 3, 2];
+//    $scope.numbers = [1, 2, 3, 1];
 }
