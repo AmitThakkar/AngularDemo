@@ -1,6 +1,7 @@
 /**
  * Created by Amit Thakkar on 28/4/14.
  */
+'use strict';
 
 angular.module('boxExcise', []);
 

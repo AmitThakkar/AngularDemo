@@ -1,6 +1,8 @@
 /**
- * Created by amit on 21/5/14.
+ * Created by Amit Thakkar on 21/5/14.
  */
+'use strict';
+
 function NgRepeatGotchaController($scope) {
     $scope.numbers = [1, 2, 3];
 

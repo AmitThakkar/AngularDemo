@@ -1,6 +1,7 @@
 /**
  * Created by Amit Thakkar on 2/5/14.
  */
+'use strict';
 
 (function () {
     var selectors = {
