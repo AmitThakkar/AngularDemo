@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="trackByApp">
+<head>
+    <title>Track By Demo</title>
+    <!-- Require AngularJS -->
+    <script type="application/javascript" src="../lib/angular.min.js"></script>
+    <!-- Require TrackBy JS -->
+    <script type="application/javascript" src="./trackBy.js"></script>
+</head>
+
+<body ng-controller="TrackByController">
+<ul>
+    <li ng-repeat="user in userListForWithoutTrackBy" message="withoutTrackBy-> {{user.id}}" print-message>
+        Id: {{user.id}}, Name: {{user.name}}
+    </li>
+</ul>
+<hr/>
+<ul>
+    <li ng-repeat="user in userListForWithTrackBy track by user.id" message="withTrackBy-> {{user.id}}" print-message>
+        Id: {{user.id}}, Name: {{user.name}}
+    </li>
+</ul>
+<hr/>
+<input type="button" value="Reload" ng-click="reloadList()">
+<input type="button" value="Print User List" ng-click="printUserList()">
+</body>
+</html>
