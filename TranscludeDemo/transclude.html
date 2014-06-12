@@ -8,11 +8,11 @@
     <script type="application/javascript" src="./transclude.js"></script>
 </head>
 
-<body>
+<body ng-controller="TranscludeController">
 <h1>Transclude Demo</h1>
 
 <div transclude-test>
-    <h3>INNER HTML</h3>
+    <span>INNER HTML with scope of {{name}}</span>
 </div>
 </body>
 </html>
